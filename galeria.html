@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Macondo&family=Roboto+Serif:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles_s.css">
+</head>
+<body class="page-gallery">
+  <header class="header-gallery">
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="galeria.html" class="active">GALERÍA</a></li>
+        <li><a href="comisiones.html">COMISIONES</a></li>
+        <li><a href="sobre-mi.html">SOBRE MI</a></li>
+      </ul>
+      <div class="artist-name">VIINS</div>
+    </nav>
+  </header>
+
+  <div class="container left-image color-red">
+    <div class="image-container">
+      <img src="/src/385deilah.webp" alt="Imagen 1">
+    </div>
+    <div class="text-container">
+      <h2>Diseño de personajes</h2>
+      <p>OC: Deliah<br>Vista de diseño inicial de un personaje de fantasia de mi autoria realizado para un proyecto personal en torno a un mundo medieval.</p>
+    </div>
+  </div>
+  
+  <div class="container right-image">
+    <div class="image-container">
+      <img src="/src/348pride.webp" alt="Imagen 2">
+    </div>
+    <div class="text-container">
+      <h2>Ilustraciones</h2>
+      <p>Ilustración realizada por la celebración del pride en un estilo semi-chibi. Colores vivos y fondo sencillo. Las pulseras son un guiño sutil a una bandera. </p>
+    </div>
+  </div>
+  
+  <div class="container left-image color-purple">
+    <div class="image-container">
+      <img src="/src/Galery.webp" alt="Imagen 3">
+    </div>
+    <div class="text-container">
+      <h2>BUBBLES</h2>
+      <p>Ilustración con diversas tecnicas de dibujo en pinceles para dar un efecto traslucido. Resaltando el uso de 2 colores para mezclarlos entre si y dar el efecto que tienen las lagrimas y burbujas.</p>
+    </div>
+  </div>
+
+  <div class="works-preview">
+    <h3>MÁS TRABAJOS</h3>
+  </div>
+
+  <div class="carousel">
+    <div class="carousel-track">
+      <img src="/src/Galery2.webp" alt="Imagen 2" class="carousel-image">
+      <img src="/src/Galery.webp" alt="Imagen 1" class="carousel-image">
+      <img src="/src/bassil.webp" alt="Imagen 3" class="carousel-image">
+    </div>
+    <button class="carousel-button prev">&lt;</button>
+    <button class="carousel-button next">&gt;</button>
+  </div>
+  
+  <div class="thank-you-section">
+    <div class="color-boxes">
+      <div class="color-box red"></div>
+      <div class="color-box turquoise"></div>
+      <div class="color-box royal-blue"></div>
+    </div>
+    <h2 class="thank-you-h2">Muchas</h2>
+    <h1 class="thank-you-h1">Gracias</h1>
+  </div>  
+
+  <footer>
+    <p> Sofia Viloria - 2024</p>
+  </footer>
+
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const images = document.querySelectorAll('.carousel-image');
+    const prevButton = document.querySelector('.carousel-button.prev');
+    const nextButton = document.querySelector('.carousel-button.next');
+  
+    let currentIndex = 0;
+  
+    function updateCarousel() {
+      const slideWidth = images[0].getBoundingClientRect().width;
+      track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    }
+  
+    nextButton.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateCarousel();
+    });
+  
+    prevButton.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateCarousel();
+    });
+  
+    window.addEventListener('resize', updateCarousel);
+  </script>  
+</body>
+</html>

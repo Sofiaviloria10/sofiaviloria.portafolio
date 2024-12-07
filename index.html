@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Macondo&family=Roboto+Serif:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles_s.css">
+</head> 
+<body>
+  <header>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">HOME</a></li>
+        <li><a href="galeria.html">GALERÍA</a></li>
+        <li><a href="comisiones.html">COMISIONES</a></li>
+        <li><a href="sobre-mi.html">SOBRE MI</a></li>
+      </ul>
+      <div class="artist-name">VIINS</div>
+    </nav>
+  </header>
+  
+  <div class="hero-section">
+    <div class="hero-text">
+      <h2>¡HEY!</h2>
+      <p>Soy Sofía, mejor conocida como <span class="highlight">Viins</span>.<br>
+        Soy ilustradora digital y estudiante de diseño grafico. <br>
+        Quiero conocer a más personas con interés en las<br>
+        ilustraciones de <span class="highlight">fantasía</span> e <span class="highlight">historias mitologicas</span>. <br><br>
+        Dale un vistazo al sitio, ¡te encantará! 
+      </p>
+    </div>
+  </div>
+
+  <div class="works-preview">
+    <h2>ALGUNOS TRABAJOS</h2>
+    <p>
+      <a href="galeria.html">VER MÁS EN <span class="highlight">GALERÍA></span></a>
+    </p>
+  </div>
+
+  <div class="carousel">
+    <div class="carousel-track">
+      <img src="/src/Galery.webp" alt="Imagen 1" class="carousel-image">
+      <img src="/src/Galery2.webp" alt="Imagen 2" class="carousel-image">
+      <img src="/src/bassil.webp" alt="Imagen 3" class="carousel-image">
+    </div>
+    <button class="carousel-button prev">&lt;</button>
+    <button class="carousel-button next">&gt;</button>
+  </div>
+  
+  <div class="thank-you-section">
+    <div class="color-boxes">
+      <div class="color-box red"></div>
+      <div class="color-box turquoise"></div>
+      <div class="color-box royal-blue"></div>
+    </div>
+    <h2 class="thank-you-h2">MUCHAS</h2>
+    <h1 class="thank-you-h1">GRACIAS</h1>
+  </div>  
+
+  <footer>
+    <p> Sofia Viloria - 2024</p>
+  </footer>
+
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const images = document.querySelectorAll('.carousel-image');
+    const prevButton = document.querySelector('.carousel-button.prev');
+    const nextButton = document.querySelector('.carousel-button.next');
+  
+    let currentIndex = 0;
+  
+    function updateCarousel() {
+      const slideWidth = images[0].getBoundingClientRect().width;
+      track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    }
+  
+    nextButton.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateCarousel();
+    });
+  
+    prevButton.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateCarousel();
+    });
+  
+    window.addEventListener('resize', updateCarousel);
+  </script>  
+</body>
+</html>

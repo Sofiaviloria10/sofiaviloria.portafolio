@@ -1,0 +1,592 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Serif', serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6, .nav-links a, .carousel-button {
+  font-family: 'Lato', sans-serif; /* Fuente secundaria */
+  font-weight: bold;
+}
+
+/* Header */
+header {
+  background: #0e0e2c;
+  color: #fff;
+  padding: 15px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-gallery {
+  background-color: #bf0426;
+}
+
+.header-comisiones {
+  background-color: #0869a6;
+}
+
+.header-sobre-mi {
+  background-color: #001de8;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a.active {
+  background: #fff;
+  color: #0e0e2c;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.highlight {
+  color: #0000FF;
+  font-weight: bold;
+}
+
+.artist-name {
+  font-size: 48px;
+  font-weight: bold;
+  color: #121221; /* Texto oscuro */
+  background-color: white;
+  display: flex; /* Para centrar contenido */
+  align-items: center; /* Centrar verticalmente */
+  justify-content: center; /* Centrar horizontalmente */
+  padding: 15px 250px; /* Ajusta el espacio interno */
+  border-radius: 0 0 0 150px; /* Curva en la esquina superior derecha */
+  position: absolute;
+  top: 0;
+  right: 0; /* Asegura que esté alineado al borde derecho */
+  height: 60px; /* Define una altura fija */
+  width: 150px; /* Define un ancho adecuado para la curva */
+}
+
+body.page-gallery .artist-name {
+  color: #bf0426; /* Color personalizado para Galería */
+}
+
+body.page-comisiones .artist-name {
+  color: #0869a6; /* Verde para Comisiones */
+}
+
+body.page-sobre-mi .artist-name {
+  color: #001de8; /* Naranja para Sobre mí */
+}
+
+/* Hero Section */
+.hero-section {
+  width: 100%;
+  height: 75vh;
+  background-image: url('src/Index1.webp');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 0 20px;
+}
+
+body.page-sobre-mi .hero-section {
+  background-image: url('src/about_me.webp');
+}
+
+.hero-text {
+  font-family: 'Roboto Serif', serif;
+  color: #000000;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero-text h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+}
+
+/* Works Preview */
+.works-preview {
+  text-align: center;
+  margin: 50px 20px;
+}
+
+.works-preview h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.works-preview a {
+  text-decoration: underline;
+  color: #000;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.works-preview a:hover {
+  color: red;
+}
+
+/* Estilo base para los contenedores */
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Apilar en pantallas pequeñas */
+  margin: 20px auto;
+  padding: 0;
+  max-width: 45%; /* Ancho máximo del contenedor */
+  background: #57aeff;
+  border-radius: 0 0 15px 0; /* Por defecto */
+  overflow: hidden;
+}
+
+/* Clases de color únicas para cada contenedor */
+.container.color-blue {
+  background-color: #378bcf; /* Azul */
+}
+.container.color-purple {
+  background-color: #bc4d7d; /* Verde */
+}
+.container.color-red {
+  background-color: #ba6868; /* Rojo */
+}
+
+/* Imagenes dentro del contenedor */
+.image-container {
+  flex: 1;
+  min-width: 250px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Imagen se adapta sin deformarse */
+}
+
+/* Texto dentro del contenedor */
+.text-container {
+  flex: 2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-container h2 {
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+
+.text-container p {
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+/* Border-radius dinámico para las posiciones */
+.left-image .image-container {
+  border-radius: 0 0 15px 0;
+}
+
+.right-image {
+  flex-direction: row-reverse; /* Invierte posición */
+}
+
+.right-image .image-container {
+  border-radius: 0 15px 0 0;
+}
+
+/* Título e Imagen Centrados */
+.centered-content {
+  color:#0869a6;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.centered-content h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.centered-content .centered-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 600px;
+  height: 420px;
+}
+
+/* Estilo Grid */
+.grid-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+  gap: 20px; /* Espacio entre elementos */
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.grid-item {
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
+.grid-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #0869a6;
+}
+
+.grid-item p {
+  font-family:Lato,sans-serif;
+  font-size: 1rem;
+  color: #000000;
+}
+
+.grid-item img {
+  max-width: 100%;
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Formulario  */
+/* Contenedor principal */
+.form-container {
+  width: 100%;
+  background-color: #0869a6; /* Fondo azul */
+  padding: 40px 20px; /* Espaciado interno */
+  text-align: center; /* Centra el contenido del texto */
+  color: white; /* Color del texto */
+}
+
+/* Título */
+.form-container h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: 'Lato', sans-serif;
+}
+
+/* Formulario */
+.form-content {
+  max-width: 600px; /* Ancho máximo del formulario */
+  margin: 0 auto; /* Centrar el formulario */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espaciado entre los campos */
+}
+
+/* Campos de entrada */
+.form-field {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  outline: none;
+  margin: auto;
+}
+
+.form-field:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+}
+
+/* Etiqueta de la solicitud */
+.form-label {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* Textarea */
+.form-textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none; /* Evita redimensionar el área */
+}
+
+.form-textarea:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+}
+
+/* Botón de envío */
+.form-button {
+  background-color: #ffffff; 
+  color: #0869a6;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: auto;
+}
+
+.form-button:hover {
+  background-color: #e6ecf3; 
+}
+
+/* Página de perfil */
+.profile-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Roboto Serif', serif;
+}
+
+/* Nombre con línea inferior */
+.profile-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.profile-header .underline {
+  border: 0;
+  border-bottom: 3px solid #0000FF; /* Línea azul */
+  width: 100px;
+  margin: 0;
+}
+
+/* Contenido principal */
+.profile-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.profile-text {
+  flex: 1;
+}
+
+.profile-text p {
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.profile-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-image img {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%; /* Hace la imagen circular */
+  object-fit: cover;
+}
+
+/* Redes sociales y correo */
+.profile-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons .icon-link i {
+  width: 30px;
+  color: #000;
+  height: 30px;
+}
+
+.contact-email p {
+  color: #000;
+  font-size: 1rem;
+}
+
+/* Carousel */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+
+.carousel-image {
+  width: 100%; /* Ajusta el ancho al contenedor */
+  height: 100%; /* Mantiene la altura del contenedor */
+  object-fit: cover; /* Asegura que la imagen ocupe todo el espacio del carrusel sin deformarse */
+  object-position: center; /* Centra la imagen si sobra espacio */
+}
+.carousel {
+  height: 600px; /* Mantiene la altura original del carrusel */
+  overflow: hidden; /* Evita que las imágenes salgan del contenedor */
+}
+    
+
+body.page-gallery .carousel {
+  width: auto;
+  height: auto;
+}
+
+body.page-gallery 
+.carousel-image {
+  width: 100%; /* Ajusta el ancho al contenedor */
+  height: 100%; /* Mantiene la altura del contenedor */
+  object-fit: cover; /* Asegura que la imagen ocupe todo el espacio del carrusel sin deformarse */
+  object-position: center; /* Centra la imagen si sobra espacio */
+}
+.carousel {
+  height: 600px; /* Mantiene la altura original del carrusel */
+  overflow: hidden; /* Evita que las imágenes salgan del contenedor */
+}
+    
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.thank-you-section {
+  background-color: #131523; /* Cambia este color si quieres otro fondo */
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.color-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.color-box {
+  width: 300px;
+  height: 15px;
+}
+
+.color-box.red {
+  background-color: #bf0426; /* Rojo */
+}
+
+.color-box.turquoise {
+  background-color: #0869a6; /* Turquesa */
+}
+
+.color-box.royal-blue {
+  background-color: #001de8; /* Azul Rey */
+}
+
+.thank-you-h2 {
+  font-family: 'Roboto',serif ;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.thank-you-h1 {
+  font-family: 'Macondo',serif;
+  font-size: 3.5rem;
+  color: #fff;
+}
+
+/* Footer */
+footer {
+  background: #fff;
+  color: #333;
+  text-align: center;
+  padding: 10px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 50vh;
+    padding: 10px;
+  }
+
+  .hero-text h2 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .artist-name {
+    font-size: 1rem;
+    padding: 5px 10px;
+  }
+
+  .grid-content {
+    grid-template-columns: 1fr;
+  }
+}
